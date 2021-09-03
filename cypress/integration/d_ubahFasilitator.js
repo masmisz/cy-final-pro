@@ -1,0 +1,27 @@
+describe('ubah facilitator', function(){
+    it('ubah facilitator', function(){
+        cy.loginDojo()
+        cy.get('#dataTable_filter > label > .form-control').type('dojo-miswa')
+        cy.wait(2000)
+        cy.get('tbody > :nth-child(1) > .dt-center').click()
+        cy.contains('Lihat').click()
+        cy.contains('Detail Data Fasilitator').should('exist')
+        cy.wait(2000)
+        cy.get('.btn-outline-primary').click()
+        cy.get('#user_fullname').clear().type('dojo-miswam')
+        cy.get('#user_email').clear().type('m@m.com')
+        cy.get('#user_is_active')
+        cy.get('#user_password').type('dojo-miswam')
+        
+        // Alamat
+        cy.get('#user_province_id').select('BANTEN')
+        cy.get('#user_city_id').select('KOTA TANGERANG SELATAN')
+        cy.get('#user_subdistrict_id').select('Ciputat')
+        cy.get('#user_address').clear().type('Jl. Jalan Kenanga No. 10')
+        cy.get('.custom-control').click()
+        // cy.get('#drop-zone').click()
+        cy.get('input[type="file"]').attachFile('pic1.jpg')
+        cy.get('#edit').click()
+        cy.get('#generalModal > .modal-dialog > .modal-content > .modal-footer > .btn').click()
+    })
+})

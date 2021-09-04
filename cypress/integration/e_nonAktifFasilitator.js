@@ -8,9 +8,7 @@ describe('non-aktifkan facilitator', function(){
         cy.get('#modal-title').should('have.text','Success')
         cy.get('#modal-body').should('have.text','Perubahan fasilitator berhasil diproses')
         cy.get('#generalModal > .modal-dialog > .modal-content > .modal-footer > .btn').click({force: true})
-        // cy.get('#generalModal > .modal-dialog > .modal-content > .modal-header > .close').click()
         cy.wait(2000)
-        // cy.logoutDojo()
     })
 
     it('2. aktifkan facilitator', function(){
@@ -21,8 +19,6 @@ describe('non-aktifkan facilitator', function(){
         cy.contains('Aktifkan').click()
         cy.get('#modal-title').should('have.text','Success')
         cy.get('#modal-body').should('have.text','Perubahan fasilitator berhasil diproses')
-        // cy.get('#generalModal > .modal-dialog > .modal-content > .modal-footer > .btn').click({force: true,})
         cy.wait(2000)
-        // cy.logoutDojo()
     })    
 })

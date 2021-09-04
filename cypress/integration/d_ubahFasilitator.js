@@ -19,7 +19,6 @@ describe('ubah facilitator', function(){
         cy.get('#user_subdistrict_id').select('Ciputat')
         cy.get('#user_address').clear().type('Jl. Jalan Kenanga No. 10')
         cy.get('.custom-control').click()
-        // cy.get('#drop-zone').click()
         cy.get('input[type="file"]').attachFile('pic1.jpg')
         cy.get('#edit').click()
         cy.get('#generalModal > .modal-dialog > .modal-content > .modal-footer > .btn').click()
